@@ -10,10 +10,11 @@
 
 body {
       font-family: "Consolas";
-      background-color: #011e46;
+      background-image: linear-gradient(#000E31, #00A788);
       margin: 0;
       padding: 0;
       color: #ffffff;
+      text-transform: uppercase;
     }
     
     .title {
@@ -42,7 +43,7 @@ body {
       align-items: flex-start;
       margin: 20px;
       padding: 20px;
-      background-color: #0A456D;
+      background-image: linear-gradient(#00A788,#000E31);
       border-radius: 8px;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -50,38 +51,82 @@ body {
     .form-container {
       flex: 1;
       padding: 0 100px;
+      
     }
     
     .form-container label {
       display: block;
       font-weight: bold;
       margin-top: 10px;
+      
     }
     
     .form-container input,
-    .form-container select {
-      width: 100%;
-      padding: 6px;
-      margin-top: 5px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-    
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0px;
+  border: none;
+  border-bottom: 2px solid #00aaff;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+  border-radius: 8px;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container input::placeholder,
+.form-container select::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-bottom: 2px solid #00e5ff;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+.form-container input[type="submit"] {
+  background-color: #00aaff;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #00e5ff;
+}
+
     .form-container button {
       display: block;
       width: 105%;
       padding: 10px;
       margin-top: 15px;
-      background-color: #00A788;
+      background: #00A788;
       color: #fff;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
+      transition: .5s;
+      display: inline-block;
+      overflow: hidden;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 0 5px #00ccff, 0 0 5px #00ccff, 0 0 5px #00ccff, 0 0 5px #00ccff;
+            
     }
     
     .form-container button:hover {
-      background-color: #017A75;
+      background-color: #00ccff;
     }
     
     .video-container {
@@ -95,31 +140,83 @@ body {
       border: none;
     }
 
-  .logo-right {
-  width: 80px; 
-  height: auto; 
-  position: absolute; 
-  top: -13px; 
-  right: 20px; 
+    .logo-right {
+  width: 80px;
+  height: auto;
+  position: absolute;
+  top: -18px;
+  right: 20px;
+  border: 3px solid transparent; 
+  border-radius: 50%; 
+  animation: spin 4s linear infinite, glow 2s ease-in-out infinite; 
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    border-color: transparent;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+  }
+  50% {
+    border-color: rgba(0, 255, 98, 0.8); 
+    box-shadow: none; 
+  }
 }
 
 .logo-left {
-  width: 200px; 
-  left: 20px; 
-
+  width: 220px;
+  left: 20px;
+  top: 4px;
+  
 }
+
 
 h1 {
   font-family: "Consolas"; 
   font-size: 43px; 
   font-weight: bold; 
   color: #ffffff;
+  text-transform: uppercase;
   
 }
 
 p {
     text-align: justify;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif; 
+    font-size: 18px; 
+    letter-spacing: 2px; 
+    line-height: 1.5; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+
+  @keyframes pulse {
+  0% {
+    transform: scale(1);
   }
+  20% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+
+.animated-button {
+  animation: pulse 2s infinite;
+  
+  
+}
 
  </style>
 
@@ -131,7 +228,7 @@ p {
 
     <img src="../logoUt.ico" alt="Logo Left" class="logo logo-left">
 
-    <h1>&#x1F916;Lobos-IA</h1>
+    <h1>Lobos-IA</h1>
 
     <img src="../logoIa.ico" alt="Logo Right" class="logo logo-right">
 
@@ -176,7 +273,7 @@ p {
         </select><br>
 
         <label for="numero_de_expediente">Numero de expediente:</label>
-        <input type="text" id="numero_de_expediente" name="numero_de_expediente" required><br>
+        <input type="text" id="numero_de_expediente" name="numero_de_expediente" required pattern="\d{10}"><br>
 
         <label for="cuatrimestre">Cuatrimestre:</label>
         <select id="cuatrimestre" name="cuatrimestre" required>
@@ -196,8 +293,8 @@ p {
 
         </select><br>
 
-        <label for="telefono">Telefono:</label>
-        <input type="text" id="telefono" name="telefono" required><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required pattern="\d{10}"><br>
 
         <label for="experiencia">Experiencia en programación:</label>
         <select id="experiencia" name="experiencia" required>
@@ -210,7 +307,9 @@ p {
 
         </select><br>
 
-        <button type="submit">Enviar Formulario</button>
+        <button type="submit" class="animated-button" id="submit-button">Enviar Formulario</button>
+
+        </div>      
 
         <script src="/script.js"></script>
        
