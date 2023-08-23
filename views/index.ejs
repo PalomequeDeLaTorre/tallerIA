@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Registro al Taller</title>
+
+ <style>
+
+body {
+      font-family: "Consolas";
+      background-color: #011e46;
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+    }
+    
+    .title {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 24px;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+    }
+
+    .logo-left {
+      left: 10px;
+    }
+
+    .logo-right {
+      right: 10px;
+    }
+    
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 20px;
+      padding: 20px;
+      background-color: #0A456D;
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-container {
+      flex: 1;
+      padding: 0 100px;
+    }
+    
+    .form-container label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    
+    .form-container input,
+    .form-container select {
+      width: 100%;
+      padding: 6px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .form-container button {
+      display: block;
+      width: 105%;
+      padding: 10px;
+      margin-top: 15px;
+      background-color: #00A788;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .form-container button:hover {
+      background-color: #017A75;
+    }
+    
+    .video-container {
+      flex: 2;
+      padding-left: 80px;
+      margin-top: 50px; 
+    }
+    
+    iframe {
+      width: 100%;
+      border: none;
+    }
+
+  .logo-right {
+  width: 80px; 
+  height: auto; 
+  position: absolute; 
+  top: -13px; 
+  right: 20px; 
+}
+
+.logo-left {
+  width: 200px; 
+  left: 20px; 
+
+}
+
+h1 {
+  font-family: "Consolas"; 
+  font-size: 43px; 
+  font-weight: bold; 
+  color: #ffffff;
+  
+}
+
+p {
+    text-align: justify;
+  }
+
+ </style>
+
+ </head>
+
+<body>
+
+  <div class="title">
+
+    <img src="../logoUt.ico" alt="Logo Left" class="logo logo-left">
+
+    <h1>&#x1F916;Lobos-IA</h1>
+
+    <img src="../logoIa.ico" alt="Logo Right" class="logo logo-right">
+
+  </div>
+
+  <div class="content-container">
+
+    <div class="video-container">
+
+      <video width="100%" height="300" controls loop><source src="../prototipoIa.mp4" type="video/mp4"></video>
+    
+      <p>"Este taller está exclusivamente destinado a estudiantes inscritos en la Universidad Tecnológica de San Juan del Río. 
+        Lamentablemente, no podemos aceptar participantes que no cumplan con este requisito. Agradecemos tu comprensión."</p>
+
+    </div>
+
+    <div class="form-container">
+     
+        <form action="https://formsubmit.co/843b60c9d3ff99a174755deb486b601b" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br>
+        
+        <label for="carrera">Carrera:</label>
+        <select id="carrera" name="carrera" required>
+
+            <option value="">Selecciona una carrera</option>
+            <option value="Tecnologías de la Información">Tecnologías de la Información</option>
+            <option value="Mecatrónica">Mecatrónica</option>
+            <option value="Energías Renovables">Energías Renovables</option>
+            <option value="Innovación de Negocios y Mercadotecnia">Innovación de Negocios y Mercadotecnia</option>
+            <option value="Sistemas Productivos">Sistemas Productivos</option>
+            <option value="Química">Química</option>
+            <option value="Química Farmacéutica">Química Farmacéutica</option>
+            <option value="Mantenimiento Industrial">Mantenimiento Industrial</option>
+            <option value="Ingeniería Civil">Ingeniería Civil</option>
+
+        </select><br>
+
+        <label for="numero_de_expediente">Numero de expediente:</label>
+        <input type="text" id="numero_de_expediente" name="numero_de_expediente" required><br>
+
+        <label for="cuatrimestre">Cuatrimestre:</label>
+        <select id="cuatrimestre" name="cuatrimestre" required>
+
+            <option value="">Selecciona un cuatrimestre</option>
+            <option value="Primero">Primer cuatrimestre</option>
+            <option value="Segundo">Segundo cuatrimestre</option>
+            <option value="Tercero">Tercer cuatrimestre</option>
+            <option value="Cuarto">Cuarto cuatrimestre</option>
+            <option value="Quinto">Quinto cuatrimestre</option>
+            <option value="Sexto">Sexto cuatrimestre</option>
+            <option value="Séptimo">Séptimo cuatrimestre</option>
+            <option value="Octavo">Octavo cuatrimestre</option>
+            <option value="Noveno">Noveno cuatrimestre</option>
+            <option value="Décimo">Décimo cuatrimestre</option>
+            <option value="Onceavo">Onceavo cuatrimestre</option>
+
+        </select><br>
+
+        <label for="telefono">Telefono:</label>
+        <input type="text" id="telefono" name="telefono" required><br>
+
+        <label for="experiencia">Experiencia en programación:</label>
+        <select id="experiencia" name="experiencia" required>
+
+            <option value="">Selecciona un nivel</option>
+            <option value="Iniciando mi viaje en la programación">Iniciando mi viaje en la programación</option>
+            <option value="Nivel Básico">Nivel Básico</option>
+            <option value="Nivel Intermedio">Nivel Intermedio</option>
+            <option value="Nivel Avanzado">Nivel Avanzado</option>
+
+        </select><br>
+
+        <button type="submit">Enviar Formulario</button>
+
+        <script src="/script.js"></script>
+       
+      </form>
+
+    </body>
+
+</html>
