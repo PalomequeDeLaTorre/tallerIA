@@ -192,7 +192,7 @@ p {
     text-align: justify;
     text-transform: uppercase;
     font-family: 'Arial', sans-serif; 
-    font-size: 18px; 
+    font-size: 12px; 
     letter-spacing: 2px; 
     line-height: 1.5; 
     color: #ffffff; 
@@ -216,6 +216,44 @@ p {
   animation: pulse 2s infinite;
   
   
+}
+
+/* Estilos generales para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-container {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .form-container {
+    padding: 0 20px;
+  }
+
+  iframe {
+    height: 200px;
+  }
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 0;
+  }
+
+  .logo-left {
+    width: 150px;
+  }
+
+  .logo-right {
+    width: 60px;
+    top: -10px;
+    right: 10px;
+  }
 }
 
  </style>
@@ -314,19 +352,17 @@ p {
         </div>  
 
       </div>   
-      
+
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           const form = document.getElementById('registration-form');
     
           form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita el comportamiento de envío del formulario por defecto
+            event.preventDefault(); 
     
-            // Redirige al usuario a la página deseada
+            
             window.location.href = 'https://graciasporregistrarte.onrender.com';
     
-            // También puedes enviar el formulario a la URL de acción original si es necesario
-            // form.submit();
           });
         });
       </script>
