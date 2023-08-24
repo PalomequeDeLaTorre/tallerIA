@@ -247,8 +247,7 @@ p {
 
     <div class="form-container">
      
-        <form action="https://formsubmit.co/843b60c9d3ff99a174755deb486b601b" method="POST">
-          <input type="hidden" name="_next" value="https://graciasporregistrarte.onrender.com">
+      <form id="registration-form" action="https://formsubmit.co/843b60c9d3ff99a174755deb486b601b" method="POST">
           <input type="hidden" name="_captcha" value="false">
 
         <label for="nombre">Nombre:</label>
@@ -310,11 +309,27 @@ p {
 
         <button type="submit" class="animated-button" id="submit-button">Enviar Formulario</button>
 
-        </div>      
+           </form>
 
-        <script src="/script.js"></script>
+        </div>  
 
-      </form>
+      </div>   
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('registration-form');
+    
+          form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita el comportamiento de envío del formulario por defecto
+    
+            // Redirige al usuario a la página deseada
+            window.location.href = 'https://graciasporregistrarte.onrender.com';
+    
+            // También puedes enviar el formulario a la URL de acción original si es necesario
+            // form.submit();
+          });
+        });
+      </script>
 
     </body>
 
