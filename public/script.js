@@ -7,14 +7,14 @@ document.getElementById('registrationForm').addEventListener('submit', async (ev
     const carrera = document.getElementById('carrera').value;
     const cuatrimestre = document.getElementById('cuatrimestre').value;
     const telefono = document.getElementById('telefono').value;
-    const experiencia = document.getElementById('experiencia').value;
+    const nivel = document.getElementById('nivel').value;
   
     const response = await fetch('/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ nombre, apellidos, numero_de_expediente, carrera, cuatrimestre, telefono, experiencia }) });
+      body: JSON.stringify({ nombre, apellidos, numero_de_expediente, carrera, cuatrimestre, telefono, nivel }) });
   
     const data = await response.json();
     alert(data.message);

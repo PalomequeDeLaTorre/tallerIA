@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.post('/register', (req, res) => {
   const registrationData = req.body;
   console.log('Registration data:', registrationData);
-  // Aquí podemos procesar los datos de registro y guardarlos en una base de datos si es necesario
+  
   res.json({ message:'¡Registro completado con éxito! Hemos recibido tus datos. Próximamente nos pondremos en contacto contigo para proporcionarte información detallada sobre los horarios del taller.' });
 });
 
